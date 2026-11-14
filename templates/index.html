@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - Retail IMS{% endblock %}
+
+{% block content %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="{{ url_for('dashboard') }}">Retail IMS</a>
+        <div class="d-flex align-items-center gap-3">
+            <span class="text-white-50 small">Welcome, <strong class="text-white">{{ session.get('username', 'User') }}</strong></span>
+            <a href="{{ url_for('logout') }}" class="btn btn-outline-light btn-sm">Logout</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container py-5 flex-grow-1">
+    <div class="row justify-content-center">
+        <div class="col-12 col-lg-10">
+            <div class="card shadow-sm border-0 rounded-3 mb-4">
+                <div class="card-body p-4 p-md-5">
+                    <h2 class="h4 fw-bold text-dark mb-1">Retail IMS Dashboard</h2>
+                    <p class="text-muted mb-4">Your shop management starts here.</p>
+                    
+                    <div class="p-4 p-md-5 bg-light rounded-3 border border-secondary-subtle border-dashed text-center">
+                        <h3 class="h5 fw-semibold text-secondary mb-2">Inventory System</h3>
+                        <p class="text-muted mb-0">Use the menu to manage your products and sales.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
