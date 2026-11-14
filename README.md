@@ -54,8 +54,8 @@ ims/
 # 1. Rename branch to main
 git branch -M main
 
-# 2. Add your GitHub repository link (replace with your URL)
-git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
+# 2. Add your GitHub repository link
+git remote add origin https://github.com/rohish-shrees12/retail-ims.git
 
 # 3. Push your code
 git push -u origin main
