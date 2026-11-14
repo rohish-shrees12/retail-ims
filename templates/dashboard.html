@@ -1,0 +1,149 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - Retail IMS{% endblock %}
+
+{% block extra_css %}
+<style>
+    /* Dark Navy Sidebar */
+    .sidebar {
+        width: 250px;
+        background-color: #0b1a3d;
+        min-height: 100vh;
+    }
+    .sidebar .nav-link {
+        color: #94a3b8;
+        padding: 12px 20px;
+        border-radius: 8px;
+        margin: 2px 12px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 500;
+        text-decoration: none;
+    }
+    .sidebar .nav-link:hover {
+        color: #ffffff;
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+    .sidebar .nav-link.active {
+        color: #ffffff;
+        background-color: #0d6efd; /* Blue active pill */
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="d-flex">
+    <!-- 1. LEFT SIDEBAR -->
+    <aside class="sidebar d-flex flex-column p-3 text-white">
+        <!-- Brand -->
+        <div class="d-flex align-items-center gap-2 mb-4 px-2 pt-2">
+            <i class="bi bi-cart3 fs-3 text-white"></i>
+            <div>
+                <h5 class="mb-0 fw-bold">Retail IMS</h5>
+                <small class="text-white-50" style="font-size: 11px;">Inventory Management</small>
+            </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <ul class="nav flex-column mb-auto">
+            <li><a href="#" class="nav-link active"><i class="bi bi-grid-1x2-fill"></i> Dashboard</a></li>
+            <li><a href="#" class="nav-link"><i class="bi bi-box-seam"></i> Products</a></li>
+            <li><a href="#" class="nav-link"><i class="bi bi-tags"></i> Categories</a></li>
+            <li><a href="#" class="nav-link"><i class="bi bi-truck"></i> Suppliers</a></li>
+            <li><a href="#" class="nav-link"><i class="bi bi-cart-check"></i> Sales</a></li>
+            <li><a href="#" class="nav-link"><i class="bi bi-bar-chart-line"></i> Reports</a></li>
+        </ul>
+
+        <!-- Bottom Settings & Logout -->
+        <hr class="border-secondary my-2">
+        <ul class="nav flex-column">
+            <li><a href="#" class="nav-link"><i class="bi bi-gear"></i> Settings</a></li>
+            <li><a href="{{ url_for('logout') }}" class="nav-link text-danger"><i class="bi bi-box-arrow-left"></i> Logout</a></li>
+        </ul>
+    </aside>
+
+    <!-- 2. MAIN CONTENT AREA -->
+    <main class="flex-grow-1 p-4" style="background-color: #f1f5f9; min-height: 100vh;">
+        <!-- Top bar greeting -->
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <div>
+                <h3 class="fw-bold mb-1">Dashboard</h3>
+                <p class="text-muted mb-0">Welcome back</p>
+            </div>
+            <div class="d-flex align-items-center gap-3">
+                <span class="badge bg-white text-secondary shadow-sm p-2 px-3 rounded-pill border">
+                    <i class="bi bi-calendar3 me-1 text-primary"></i> Sunday, 9 November 2025
+                </span>
+                <span class="badge bg-white text-dark shadow-sm p-2 px-3 rounded-pill border">
+                    <i class="bi bi-person-circle text-primary me-1"></i> admin
+                </span>
+            </div>
+        </div>
+
+        <!-- 4 METRIC CARDS -->
+
+<div class="row g-3 mb-4">
+    <!-- Card 1: Total Products -->
+    <div class="col-12 col-sm-6 col-xl-3">
+        <div class="card border-0 shadow-sm rounded-3 p-3">
+            <div class="d-flex align-items-center gap-3">
+                <div class="bg-primary-subtle text-primary p-3 rounded-3 fs-3">
+                    <i class="bi bi-box-seam"></i>
+                </div>
+                <div>
+                    <h3 class="fw-bold mb-0">25</h3>
+                    <small class="text-muted">Total Products</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card 2: Total Stock Qty -->
+    <div class="col-12 col-sm-6 col-xl-3">
+        <div class="card border-0 shadow-sm rounded-3 p-3">
+            <div class="d-flex align-items-center gap-3">
+                <div class="bg-success-subtle text-success p-3 rounded-3 fs-3">
+                    <i class="bi bi-database"></i>
+                </div>
+                <div>
+                    <h3 class="fw-bold mb-0">412</h3>
+                    <small class="text-muted">Total Stock Qty</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card 3: Today's Sales -->
+    <div class="col-12 col-sm-6 col-xl-3">
+        <div class="card border-0 shadow-sm rounded-3 p-3">
+            <div class="d-flex align-items-center gap-3">
+                <div class="bg-info-subtle text-info p-3 rounded-3 fs-3">
+                    <i class="bi bi-graph-up-arrow"></i>
+                </div>
+                <div>
+                    <h3 class="fw-bold mb-0">Rs. 12,850</h3>
+                    <small class="text-muted">Today's Sales</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card 4: Low Stock Products -->
+    <div class="col-12 col-sm-6 col-xl-3">
+        <div class="card border-0 shadow-sm rounded-3 p-3">
+            <div class="d-flex align-items-center gap-3">
+                <div class="bg-danger-subtle text-danger p-3 rounded-3 fs-3">
+                    <i class="bi bi-exclamation-triangle"></i>
+                </div>
+                <div>
+                    <h3 class="fw-bold mb-0 text-danger">3</h3>
+                    <small class="text-muted">Low Stock Products</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    </main>
+</div>
+{% endblock %}

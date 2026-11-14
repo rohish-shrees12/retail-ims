@@ -63,7 +63,7 @@ def login():
 def dashboard():
     if not session.get('logged_in'):
         return redirect(url_for('login'))
-    return render_template('index.html') 
+    return render_template('dashboard.html') 
 
 @app.route('/logout')
 def logout():
